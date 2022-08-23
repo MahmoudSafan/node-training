@@ -1,14 +1,24 @@
-const http = require('http');
+const elements = [1,2,3,4,5];
 
-const hostname = "127.0.0.1";
-const port = 3000;
-
-const server = http.createServer((req,res) => {
-  res.end('hello world after saving');
+elements.forEach(hamada => {
+  console.log(hamada + 100);
 });
 
-server.listen(port, hostname, ()=>{
-  console.log(`server is runniong at http://${hostname}:${port}`)
-});
+for (let index = 0; index < elements.length; index++) {
+  const element = elements[index];
+}
 
 
+function myForEach(array, cb){
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    cb(element);
+  }
+}
+
+function handleArrayValues(element){
+  console.log(element);
+}
+
+
+myForEach(elements, handleArrayValues)
